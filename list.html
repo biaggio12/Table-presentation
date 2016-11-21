@@ -1,0 +1,62 @@
+<section id="users" class="users_list">
+    <div style="float: left">
+        <h2>Wyszukaj</h2>
+        <input type="text" placeholder="Search:" data-ng-model="searchText">
+        <div>
+            <br>
+            <h3>Wyświetl</h3>
+            <button data-ng-click="setLimit(10)" value="10">10</button>
+            <button data-ng-click="setLimit(25)" value="25">25</button>
+            <button data-ng-click="setLimit(50)" value="50">50</button></div>
+    </div>
+
+    <div style="float: left; padding-left: 30px">
+        <table>
+            <tr>
+                <th>Imię</th>
+                <th>Drugie imię</th>
+                <th>Nazwisko</th>
+                <th>Data Urodzenia</th>
+                <th>Miejsce Urodzenia</th>
+                <th>Obywatelstwo</th>
+            </tr>
+            <tbody ng-switch on="isSelUser(user)" ng-click="selUser(user,$index)" data-ng-repeat="user in content |pagination: currentPage*limit| limitTo: limit | filter: searchText" >
+            <tr ng-class="{highlight:selIdx==$index}">
+                <td>{{user.imie}}</td>
+                <td>{{user.imie2}}</td>
+                <td>{{user.nazwisko}}</td>
+                <td>{{user.data_urodzenia | date: "dd-MMMM-yyyy"}}</td>
+                <td>{{user.miejsce_urodzenia}}</td>
+                <td>{{user.obywatelstwo}}</td>
+            </tr>
+            <tr ng-switch-when="true" class="highlight">
+                <td rowspan="2" colspan="7" >
+                    <span><strong>Nazwisko Panieńskie:</strong> {{user.nazwisko_panienskie}}</span>
+                    <span><strong>Data Zmiany Nazwiska:</strong> {{user.nazwisko_zmiana_data}}</span>
+                    <span><strong>Imię Ojca:</strong> {{user.ojciec_imie}}</span>
+                    <span><strong>Imię Matki:</strong> {{user.matka_imie}}</span>
+                    <span><strong>Płeć:</strong> {{user.plec}}</span>
+                    <span><strong>Adres Zameldowania:</strong> {{user.adres_adres}} {{user.adres_kod_pocztowy}} {{user.adres_miejscowosc}},{{user.adres_wojewodztwo}}</span>
+                    <span><strong>Adres Korespondencyjny:</strong> {{user.adres_korespondencyjny_adres}} {{user.adres_korespondencyjny_kod_pocztowy}} {{user.adres_korespondencyjny_miejscowosc}},{{user.adres_korespondencyjny_wojewodztwo}}</span>
+
+
+                </td>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination-div" ng-show="content.length">
+        <ul>
+            <li>
+                <button type="button" ng-disabled="currentPage == 0"
+                        ng-click="currentPage=currentPage-1"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+            </li>
+            <li>
+                <button type="button"
+                        ng-disabled="currentPage >= content.length/limit - 1"
+                        ng-click="currentPage = currentPage+1"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<br>

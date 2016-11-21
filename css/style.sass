@@ -1,0 +1,219 @@
+//Variables for project
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet')
+$font-stack: 'Roboto', sans-serif
+
+body
+  width: 1200px
+  height: auto
+  margin: 0 auto
+  padding: 25px
+  font: 100% $font-stack
+.users_list
+  padding: 20px
+  height: auto
+#users
+  input
+    float: left
+
+.table-container
+  float: left
+  padding-left: 80px
+table
+  background: #f5f5f5
+  border-collapse: separate
+  box-shadow: inset 0 1px 0 #fff
+  -webkit-box-shadow: inset 0 1px 0 #fff
+  -moz-box-shadow: inset 0 1px 0 #fff
+  font-size: 16px
+  font: 100% $font-stack
+  font-weight: 700
+  line-height: 24px
+  margin: 30px auto
+  text-align: left
+  height: auto
+  tr
+    height: 70px
+    &:nth-child(odd)
+      background: #eee
+  th
+    background: linear-gradient(#777, #444)
+    border-left: 1px solid #555
+    border-right: 1px solid #777
+    border-top: 1px solid #555
+    border-bottom: 1px solid #333
+    box-shadow: inset 0 1px 0 #999
+    color: #fff
+    font-weight: bold
+    font-family: $font-stack
+    padding: 10px 15px
+    position: relative
+    text-shadow: 0 1px 0 #000
+
+    &:after
+      background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08))
+      content: ''
+      display: block
+      height: 25%
+      left: 0
+      margin: 1px 0 0 0
+      position: absolute
+      top: 25%
+    &:first-child
+      border-left: 1px solid #777
+      box-shadow: inset 1px 1px 0 #999
+    &:last-child
+      box-shadow: inset -1px 1px 0 #999
+  td
+    border-right: 1px solid #fff
+    border-left: 1px solid #e8e8e8
+    border-top: 1px solid #fff
+    border-bottom: 1px solid #e8e8e8
+    font-family: $font-stack
+    padding: 10px
+    position: relative
+    transition: all 300ms
+    max-width: 180px
+    &:first-child
+      box-shadow: inset 1px 0 0 #fff
+    &:last-child
+      border-right: 1px solid #e8e8e8
+      box-shadow: inset -1px 0 0 #fff
+.sel
+  background-color: lightgreen
+.highlight
+  background-color: lightgreen !important
+  span
+    font-weight: 400
+    padding-left: 25px
+    float: left
+
+.pagination-div
+  button
+    min-width: 80px
+  ul
+    margin: 0
+    margin-right: 100%
+    list-style: none
+    clear: both
+  li
+    display: inline-block
+    float: left
+
+  span
+    background-color: #04ACEC
+    padding: 0
+    margin: 0
+
+.footer-distributed
+  background: #8B8B8B
+  background: linear-gradient(top, #6482A9, #4E667A)
+  background: -ms-linear-gradient(top, #6482A9, #4E667A)
+  background: -webkit-gradient(linear, left top, left bottom, from(#6482A9), to(#4E667A))
+  background: -moz-linear-gradient(top, #6482A9, #4E667A)
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12)
+  box-sizing: border-box
+  border-radius: 10px
+  -webkit-border-radius: 10px
+  -moz-border-radius: 10px
+  color: white
+  width: 100%
+  text-align: left
+  font: normal 16px sans-serif
+  padding: 45px 50px
+  margin-top: 20px
+  .footer-left p
+    color: white
+    font-size: 14px
+    margin: 0
+  p.footer-links
+    font-size: 18px
+    font-weight: bold
+    color: #ffffff
+    margin: 0 0 10px
+    padding: 0
+    a
+      display: inline-block
+      line-height: 1.8
+      text-decoration: none
+      color: inherit
+  .footer-right
+    float: right
+    margin-top: 6px
+    max-width: 180px
+    a
+      display: inline-block
+      width: 35px
+      height: 35px
+      background-color: #33383b
+      border-radius: 2px
+      font-size: 20px
+      color: #ffffff
+      text-align: center
+      line-height: 35px
+      margin-left: 3px
+
+/* Footer links
+
+//Navigation styling
+
+#menu-bar
+  width: 99%
+  margin: 0px 0px 0px 0px
+  padding: 6px 3px 6px 6px
+  height: auto
+  line-height: 100%
+  box-shadow: 1px 1px 3px #666666
+  -webkit-box-shadow: 1px 1px 3px #666666
+  -moz-box-shadow: 1px 1px 3px #666666
+  background: #8B8B8B
+  background: linear-gradient(top, #6482A9, #4E667A)
+  background: -ms-linear-gradient(top, #6482A9, #4E667A)
+  background: -webkit-gradient(linear, left top, left bottom, from(#6482A9), to(#4E667A))
+  background: -moz-linear-gradient(top, #6482A9, #4E667A)
+  border: solid 1px #00076D
+  position: relative
+  z-index: 999
+  li
+    margin: 0px 0px 0px 0px
+    padding: 0px 6px 0px 6px
+    float: left
+    position: relative
+    list-style: none
+  a
+    font-weight: bold
+    font-family: arial
+    font-style: normal
+    font-size: 14px
+    color: #E7E5E5
+    text-decoration: none
+    display: block
+    padding: 6px 20px 6px 20px
+    margin: 0
+    border-radius: 10px
+    -webkit-border-radius: 10px
+    -moz-border-radius: 10px
+    text-shadow: 2px 2px 3px #000000
+  li ul li a
+    margin: 0
+  .active a, li:hover > a
+    background: #25ABBA
+    color: #FFFFFF
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2)
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2)
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2)
+    text-shadow: 0px 0px 0px #FFFFFF
+  ul
+  &:after
+    content: "."
+    display: block
+    clear: both
+    visibility: hidden
+    line-height: 0
+    height: 0
+  display: inline-block
+
+html[xmlns] #menu-bar
+  display: block
+
+* html #menu-bar
+  height: 1%
